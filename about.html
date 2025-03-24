@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - E-Shop</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header>
+      <div class="container">
+        <div class="logo">
+          <h1>E-Shop</h1>
+        </div>
+        <nav>
+          <ul class="menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="cart-icon">
+          <a href="cart.html">
+            <i class="fas fa-shopping-cart"></i>
+            <span id="cart-count">0</span>
+          </a>
+        </div>
+        <div class="menu-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="about-section">
+      <div class="container">
+        <h1 class="page-title">About Us</h1>
+        
+        <div class="about-content">
+          <div class="about-image">
+            <img src="https://images.unsplash.com/photo-1556742393-d75f468bfcb0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3" alt="Our Team">
+          </div>
+          <div class="about-text">
+            <h2>Our Story</h2>
+            <p>Welcome to E-Shop, your one-stop destination for all your shopping needs. We started in 2010 with a simple mission: to provide high-quality products at affordable prices with exceptional customer service.</p>
+            <p>What began as a small online store has grown into a trusted marketplace offering thousands of products across multiple categories. Our journey has been incredible, and we owe our success to our loyal customers who have supported us throughout the years.</p>
+            <p>At E-Shop, we believe in creating an enjoyable shopping experience. We carefully select each product in our inventory to ensure quality and value. Our team works tirelessly to bring you the latest trends and must-have items.</p>
+            
+            <div class="about-values">
+              <h2>Our Values</h2>
+              <div class="values-grid">
+                <div class="value-item">
+                  <i class="fas fa-star"></i>
+                  <h3>Quality</h3>
+                  <p>We never compromise on the quality of our products.</p>
+                </div>
+                <div class="value-item">
+                  <i class="fas fa-users"></i>
+                  <h3>Customer First</h3>
+                  <p>Our customers are at the heart of everything we do.</p>
+                </div>
+                <div class="value-item">
+                  <i class="fas fa-leaf"></i>
+                  <h3>Sustainability</h3>
+                  <p>We're committed to environmentally friendly practices.</p>
+                </div>
+                <div class="value-item">
+                  <i class="fas fa-handshake"></i>
+                  <h3>Integrity</h3>
+                  <p>Honesty and transparency in all our dealings.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="team-section">
+          <h2>Meet Our Team</h2>
+          <div class="team-grid">
+            <div class="team-member">
+              <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Team Member">
+              <h3>John Doe</h3>
+              <p>Founder & CEO</p>
+            </div>
+            <div class="team-member">
+              <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Team Member">
+              <h3>Jane Smith</h3>
+              <p>Product Manager</p>
+            </div>
+            <div class="team-member">
+              <img src="https://randomuser.me/api/portraits/men/68.jpg" alt="Team Member">
+              <h3>Michael Johnson</h3>
+              <p>Head of Design</p>
+            </div>
+            <div class="team-member">
+              <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Team Member">
+              <h3>Emily Brown</h3>
+              <p>Customer Support Lead</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-columns">
+          <div class="footer-column">
+            <h3>E-Shop</h3>
+            <p>Your one-stop destination for all your shopping needs.</p>
+            <div class="social-icons">
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-pinterest"></i></a>
+            </div>
+          </div>
+          <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="products.html">Products</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Contact Us</h3>
+            <ul class="contact-info">
+              <li><i class="fas fa-map-marker-alt"></i> 123 Shopping St, NY, USA</li>
+              <li><i class="fas fa-phone"></i> +1 234 567 8900</li>
+              <li><i class="fas fa-envelope"></i> info@eshop.com</li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Newsletter</h3>
+            <p>Subscribe to receive updates on new arrivals and special offers.</p>
+            <form class="newsletter-form">
+              <input type="email" placeholder="Your Email" required>
+              <button type="submit">Subscribe</button>
+            </form>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2023 E-Shop. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Cart - E-Shop</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header>
+      <div class="container">
+        <div class="logo">
+          <h1>E-Shop</h1>
+        </div>
+        <nav>
+          <ul class="menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="cart-icon">
+          <a href="cart.html" class="active">
+            <i class="fas fa-shopping-cart"></i>
+            <span id="cart-count">0</span>
+          </a>
+        </div>
+        <div class="menu-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
+    </header>
+
+    <!-- Cart Section -->
+    <section class="cart-section">
+      <div class="container">
+        <h1 class="page-title">Your Shopping Cart</h1>
+        
+        <div class="cart-container">
+          <div class="cart-items" id="cart-items">
+            <!-- Cart items will be loaded dynamically -->
+          </div>
+          
+          <div class="cart-summary">
+            <h2>Order Summary</h2>
+            <div class="summary-item">
+              <span>Subtotal</span>
+              <span id="cart-subtotal">$0.00</span>
+            </div>
+            <div class="summary-item">
+              <span>Shipping</span>
+              <span>$5.99</span>
+            </div>
+            <div class="summary-item">
+              <span>Tax</span>
+              <span id="cart-tax">$0.00</span>
+            </div>
+            <div class="summary-item total">
+              <span>Total</span>
+              <span id="cart-total">$0.00</span>
+            </div>
+            
+            <div class="coupon">
+              <input type="text" placeholder="Coupon Code" id="coupon-code">
+              <button id="apply-coupon" class="btn-small">Apply</button>
+            </div>
+            
+            <button id="checkout-btn" class="btn">Proceed to Checkout</button>
+            <a href="products.html" class="continue-shopping">Continue Shopping</a>
+          </div>
+        </div>
+        
+        <!-- Empty Cart Message -->
+        <div id="empty-cart" class="empty-cart hidden">
+          <i class="fas fa-shopping-cart"></i>
+          <h2>Your cart is empty</h2>
+          <p>Looks like you haven't added anything to your cart yet.</p>
+          <a href="products.html" class="btn">Start Shopping</a>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Payment Modal -->
+    <div id="payment-modal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Payment Method</h2>
+        
+        <div class="payment-methods">
+          <div class="payment-method-tabs">
+            <button class="payment-tab active" data-tab="credit-card">Credit Card</button>
+            <button class="payment-tab" data-tab="paypal">PayPal</button>
+            <button class="payment-tab" data-tab="bank-transfer">Bank Transfer</button>
+          </div>
+          
+          <div class="payment-tab-content active" id="credit-card">
+            <form id="credit-card-form">
+              <div class="form-group">
+                <label for="card-name">Cardholder Name</label>
+                <input type="text" id="card-name" placeholder="Name on card" required>
+              </div>
+              <div class="form-group">
+                <label for="card-number">Card Number</label>
+                <input type="text" id="card-number" placeholder="1234 5678 9012 3456" maxlength="19" required>
+              </div>
+              <div class="form-row">
+                <div class="form-group half">
+                  <label for="expiry-date">Expiry Date</label>
+                  <input type="text" id="expiry-date" placeholder="MM/YY" maxlength="5" required>
+                </div>
+                <div class="form-group half">
+                  <label for="cvv">CVV</label>
+                  <input type="text" id="cvv" placeholder="123" maxlength="3" required>
+                </div>
+              </div>
+              <button type="submit" class="btn">Pay Now</button>
+            </form>
+          </div>
+          
+          <div class="payment-tab-content" id="paypal">
+            <div class="paypal-content">
+              <img src="https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_111x69.jpg" alt="PayPal">
+              <p>You will be redirected to PayPal to complete your payment.</p>
+              <button class="btn" id="paypal-button">Pay with PayPal</button>
+            </div>
+          </div>
+          
+          <div class="payment-tab-content" id="bank-transfer">
+            <div class="bank-transfer-content">
+              <h3>Bank Transfer Details</h3>
+              <p>Please transfer the amount to the following bank account:</p>
+              <div class="bank-details">
+                <p><strong>Bank Name:</strong> E-Shop Bank</p>
+                <p><strong>Account Name:</strong> E-Shop Inc.</p>
+                <p><strong>Account Number:</strong> 1234567890</p>
+                <p><strong>Routing Number:</strong> 987654321</p>
+                <p><strong>Reference:</strong> Your Order Number</p>
+              </div>
+              <button class="btn" id="confirm-transfer">Confirm Transfer</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Order Confirmation Modal -->
+    <div id="confirmation-modal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="confirmation-content">
+          <i class="fas fa-check-circle"></i>
+          <h2>Order Confirmed!</h2>
+          <p>Your order has been placed successfully.</p>
+          <p>Order Number: <span id="order-number">ORD123456</span></p>
+          <p>A confirmation email has been sent to your email address.</p>
+          <a href="index.html" class="btn">Continue Shopping</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-columns">
+          <div class="footer-column">
+            <h3>E-Shop</h3>
+            <p>Your one-stop destination for all your shopping needs.</p>
+            <div class="social-icons">
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-pinterest"></i></a>
+            </div>
+          </div>
+          <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="products.html">Products</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Contact Us</h3>
+            <ul class="contact-info">
+              <li><i class="fas fa-map-marker-alt"></i> 123 Shopping St, NY, USA</li>
+              <li><i class="fas fa-phone"></i> +1 234 567 8900</li>
+              <li><i class="fas fa-envelope"></i> info@eshop.com</li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Newsletter</h3>
+            <p>Subscribe to receive updates on new arrivals and special offers.</p>
+            <form class="newsletter-form">
+              <input type="email" placeholder="Your Email" required>
+              <button type="submit">Subscribe</button>
+            </form>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2023 E-Shop. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
