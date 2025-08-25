@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+
+</head>
+<style>
+    .contaner{
+        width: 800px;
+        height: 500px;
+       
+        margin:auto;
+        margin-top: 30px;
+       
+    }
+    .contaner h1{
+     text-align: center;
+     font-size: 40px;
+    }
+    .secound-main{
+        width: 80%;
+        height: 70%;
+    }
+    .name{
+        padding: 20px;
+        font-size: 20px;
+    }
+    .matirial{
+        width: 100%;
+        height: 50%;
+        margin: 60px;
+    }
+    .inname{
+        width: 300px;
+        height: 40px;
+        margin-left: 50px;
+        margin: 20px;
+        border-radius: 5px;
+        border:none;
+        padding-left: 30px;
+    }
+    button{
+        width: 170px;
+        height: 45px;
+        border: none;
+        font-weight: bold;
+        font-size: 20px;
+        border-radius: 10px;
+        margin-left: 35%;
+        margin-top: 20px;
+        background-color: rgb(35, 19, 65);
+        color: white;
+    }
+    button:hover{
+        transition-duration: 0.5s;
+        background-color: rgb(162, 247, 123);
+        color: black;
+        font-size: 25px;
+    }
+    .Registar{
+        color: blue;
+        font-size: 20px;
+        border-bottom: solid 1px blue;
+    }
+</style>
+<body>
+    <header>
+      <div class="container">
+        <div class="logo">
+          <h1>E-Shop</h1>
+        </div>
+        <nav>
+          <ul class="menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+            <li><a href="login.html">login </a></li>
+
+          </ul>
+        </nav>
+        <div class="cart-icon">
+          <a href="cart.html">
+            <i class="fas fa-shopping-cart"></i>
+            <span id="cart-count">0</span>
+          </a>
+        </div>
+        <div class="menu-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
+    </header>
+    <main>
+        <div class="contaner">
+            <h1>Login</h1>
+            <div class="secound-main">
+                <div class="matirial">
+                    <div class="hidden-mal" style="display: none;">
+                  <label class="name">Name</label><br>
+               <input type="text" class="inname" placeholder="Enter Your Name" required><br>
+               </div>
+               <label class="name">Email</label><br>
+               <input type="email" class="inname" placeholder="Enter Your Email" required><br>
+                 <label class="name">Password</label><br>
+               <input type="password" class="inname" placeholder="Enter Your password" required><br>
+
+               <button type="submit" name="loginbtn">Login</button><br>
+                 <label class="Registar">Registar</label><br>
+
+               </div>
+            </div>
+        </div>
+    </main>
+<script>
+    let btn=document.querySelector('.Registar');
+    btn.addEventListener.addEventListener('click', function() {
+        let show_cas=document.querySelector('.hidden-mal');
+        let loginbtn=document.querySelector('.loginbtn');
+        show_cas.style.display="block";
+        loginbtn.innerHTML="Registar";
+
+    });
+</script>
+</body>
+</html>
+
+
